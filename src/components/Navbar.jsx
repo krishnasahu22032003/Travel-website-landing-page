@@ -1,24 +1,50 @@
-import { NAV_LINKS } from "../../constant"
-
+import { NAV_LINKS } from "../../constant";
+import Button from "./Button";
 
 const Navbar = () => {
   return (
-<nav className=" flexBetween max-container padding-container relative z-30 py-10 px-10">
-<a href="/">
-<img src="/images/logo.png" alt="logo" className="w-[100px] h-[70px] top-0 px-5 " />
-</a>
-<ul className="hidden h-full gap-12 lg:flex" >
-{NAV_LINKS.map((link)=>(
-<a href={link.href} key={link.key} className="cursor-pointer flexCenter regular-16 text-gray-400 pb-1.5 transition-all hover:font-bold "  >
-{link.label}
+    <nav className="flex justify-between items-center max-w-[1440px] mx-auto px-10 py-5 relative z-30">
+      {/* Logo */}
+      <a href="/">
+        <img
+          src="/images/logo.png"
+          alt="logo"
+          className="w-[100px] h-[70px] px-5 object-contain"
+        />
+      </a>
 
-</a>
+      {/* Navigation Links */}
+      <ul className="hidden lg:flex h-full gap-12 items-center">
+        {NAV_LINKS.map((link) => (
+          <li key={link.key}>
+            <a
+              href={link.href}
+              className="text-gray-400 text-[16px] font-normal pb-1.5 hover:font-bold transition-all"
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
 
-))}
-</ul>
+      {/* Login Button */}
+      <div className="hidden lg:flex items-center justify-center">
+        <Button
+          type="button"
+          title="Login"
+          icon="/user.svg"
+          variant="btn_dark_green"
+        />
+      </div>
 
-</nav>
-  )
-}
+      {/* Mobile Menu Icon */}
+      <img
+        src="/images/menu.svg"
+        alt="menu"
+        className="block lg:hidden w-8 h-8 cursor-pointer"
+      />
+    </nav>
+  );
+};
 
-export default Navbar
+export default Navbar;
