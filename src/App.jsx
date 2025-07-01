@@ -1,4 +1,5 @@
 
+import Camp from './components/Camp'
 import Hero from './components/Hero'
 import Navbar from './components/Navbar'
 import './index.css'
@@ -10,6 +11,7 @@ function App() {
     <>
    <Navbar/>
    <Hero/>
+   <Camp/>
     </>
   )
 }
