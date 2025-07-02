@@ -5,6 +5,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+     overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  
   }
 
   body {
@@ -41,6 +45,16 @@
 
 }
 @layer base{
+   html, body {
+    overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar {
+    display: none;
+  }
   .text-green-50 { color: var(--color--green-50); }
   .text-green-90 { color: var(--color--green-90); }
   .bg-green-50 { background-color: var(--color--green-50); }
