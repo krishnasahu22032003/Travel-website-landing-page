@@ -14,34 +14,35 @@ export const PEOPLE_URL = [
 
 export const FEATURES = [
   {
-    title: 'Real maps can be offline',
+    title: 'Offline Maps, Always Ready',
     icon: '/images/map.svg',
     variant: 'green',
     description:
-      'We provide a solution for you to be able to use our application when climbing, yes offline maps you can use at any time there is no signal at the location',
+      'No signal? No problem. Access fully functional offline maps anytime, anywhere—even at the most remote peaks or deep forest trails.',
   },
   {
-    title: 'Set an adventure schedule',
+    title: 'Smart Adventure Scheduling',
     icon: '/images/calendar.svg',
     variant: 'green',
     description:
-      "Schedule an adventure with friends. On holidays, there are many interesting offers from Hilink. That way, there's no more discussion",
+      'Plan your treks effortlessly. Invite friends, pick dates, and explore exclusive Globeora experiences during holidays and seasonal events.',
   },
   {
-    title: 'Technology using augment reality',
+    title: 'Augmented Reality Navigation',
     icon: '/images/tech.svg',
     variant: 'green',
     description:
-      'Technology uses augmented reality as a guide to your hiking trail in the forest to the top of the mountain. Already supported by the latest technology without an internet connection',
+      'Find your way with AR-powered trail guidance. Experience next-gen navigation even without a network—just point and explore.',
   },
   {
-    title: 'Many new locations every month',
+    title: 'New Destinations Every Month',
     icon: '/images/location.svg',
     variant: 'orange',
     description:
-      'Lots of new locations every month, because we have a worldwide community of climbers who share their best experiences with climbing',
+      'Get inspired with fresh trails monthly. Powered by a global explorer community sharing hidden gems and unforgettable journeys.',
   },
 ];
+
 export const FOOTER_CONTACT_INFO = {
   title: 'Contact Us',
   links: [
