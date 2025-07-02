@@ -1,21 +1,25 @@
-// Animated Camp Section with GSAP + Tilt
 "use client";
 
-import { useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Tilt from "react-parallax-tilt";
-import { useGSAP } from "@gsap/react";
-
 import { PEOPLE_URL } from "../../constant";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const CampSite = ({ backgroundImage, title, subtitle, peopleJoined }) => {
   return (
-    <Tilt $1glareEnable={true} glareMaxOpacity={0.03} scale={1} tiltMaxAngleX={5} tiltMaxAngleY={5} className="camp-tilt">
+    <Tilt
+      glareEnable={true}
+      glareMaxOpacity={0.03}
+      scale={1}
+      tiltMaxAngleX={5}
+      tiltMaxAngleY={5}
+      className="camp-tilt"
+    >
       <div
-        className="camp-card h-[640px] w-full sm:w-[640px] md:w-[760px] lg:w-[880px] min-w-[320px] bg-cover bg-no-repeat lg:rounded-r-5xl 2xl:rounded-5xl"
+        className="camp-card h-[640px] w-full sm:w-[640px] md:w-[760px] lg:w-[880px] min-w-[320px] bg-cover bg-no-repeat will-change-transform lg:rounded-r-5xl 2xl:rounded-5xl"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
         <div className="flex h-full flex-col items-start justify-between p-6 lg:px-20 lg:py-10">
@@ -26,7 +30,10 @@ const CampSite = ({ backgroundImage, title, subtitle, peopleJoined }) => {
             <div className="flex flex-col gap-1">
               <h4 className="bold-18 text-black camp-title">
                 {title.split(" ").map((word, i) => (
-                  <span key={i} className="inline-block mr-1 opacity-0">
+                  <span
+                    key={i}
+                    className="inline-block mr-1 opacity-0 translate-y-[10px] will-change-transform"
+                  >
                     {word}
                   </span>
                 ))}
@@ -35,12 +42,12 @@ const CampSite = ({ backgroundImage, title, subtitle, peopleJoined }) => {
             </div>
           </div>
 
-          <div className="flexCenter gap-6">
+          <div className="camp-images flexCenter gap-6">
             <span className="flex -space-x-4 overflow-hidden">
               {PEOPLE_URL.map((url, index) => (
                 <img
                   key={index}
-                  className="inline-block h-10 w-10 rounded-full"
+                  className="inline-block h-10 w-10 rounded-full will-change-transform"
                   src={url}
                   alt="person"
                   width={52}
@@ -59,36 +66,61 @@ const CampSite = ({ backgroundImage, title, subtitle, peopleJoined }) => {
 const Camp = () => {
   const sectionRef = useRef(null);
 
-  useGSAP(
-    () => {
-      gsap.from(".camp-card", {
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse",
-        },
-        y: 40,
-        opacity: 0,
-        duration: 0.8,
-        ease: "power4.out",
-        stagger: 0.15,
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      // Animate each card individually
+      gsap.utils.toArray(".camp-card").forEach((card) => {
+        gsap.set(card, { opacity: 0, y: 60 });
+
+        gsap.to(card, {
+          scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+        });
       });
 
-      gsap.to(".camp-title span", {
-        scrollTrigger: {
-          trigger: ".camp-card",
-          start: "top 85%",
-        },
-        opacity: 1,
-        y: 0,
-        duration: 0.5,
-        stagger: 0.07,
-        ease: "power3.out",
+      // Animate title words
+      gsap.utils.toArray(".camp-title span").forEach((word) => {
+        gsap.set(word, { opacity: 0, y: 10 });
+        gsap.to(word, {
+          scrollTrigger: {
+            trigger: word,
+            start: "top 90%",
+          },
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          ease: "power2.out",
+        });
       });
-    },
-    { scope: sectionRef }
-  );
+
+      // Animate people images
+      gsap.utils.toArray(".camp-images img").forEach((img) => {
+        gsap.set(img, { opacity: 0, scale: 0.8 });
+
+        gsap.to(img, {
+          scrollTrigger: {
+            trigger: img,
+            start: "top 90%",
+          },
+          opacity: 1,
+          scale: 1,
+          duration: 0.5,
+          ease: "back.out(1.7)",
+        });
+      });
+
+      ScrollTrigger.refresh();
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
     <section
