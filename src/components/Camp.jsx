@@ -19,7 +19,7 @@ const CampSite = ({ backgroundImage, title, subtitle, peopleJoined }) => {
       className="camp-tilt"
     >
       <div
-        className="camp-card h-[640px] w-full sm:w-[640px] md:w-[760px] lg:w-[880px] min-w-[320px] bg-cover bg-no-repeat will-change-transform lg:rounded-r-5xl 2xl:rounded-5xl"
+        className="camp-card h-[640px] w-full sm:w-[640px] md:w-[760px] lg:w-[980px] min-w-[320px] bg-cover bg-no-repeat will-change-transform lg:rounded-r-5xl 2xl:rounded-5xl"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
         <div className="flex h-full flex-col items-start justify-between p-6 lg:px-20 lg:py-10">
