@@ -44,14 +44,14 @@ export const FEATURES = [
 ];
 
 export const FOOTER_CONTACT_INFO = {
-  title: 'Contact Us',
+  title: 'Connect With Us',
   links: [
-    { label: 'Admin Officer', value: '123-456-7890' },
-    { label: 'Email Officer', value: 'hilink@akinthil.com' },
+    { label: 'Support Line', value: '+91-98765-43210' },
+    { label: 'Email Us', value: 'support@globeora.com' },
   ],
 };
 export const SOCIALS = {
-  title: 'Social',
+  title: 'Follow Us',
   links: [
     '/images/facebook.svg',
     '/images/instagram.svg',
@@ -62,18 +62,22 @@ export const SOCIALS = {
 };
 export const FOOTER_LINKS = [
   {
-    title: 'Learn More',
+    title: 'Discover Globeora',
     links: [
-      'About Hilink',
-      'Press Releases',
-      'Environment',
-      'Jobs',
-      'Privacy Policy',
-      'Contact Us',
+      'About Globeora',
+      'Our Mission',
+      'Tech & Innovation',
+      'Careers',
+      'Terms of Service',
+      'Contact Support',
     ],
   },
   {
-    title: 'Our Community',
-    links: ['Climbing xixixi', 'Hiking hilink', 'Hilink kinthill'],
+    title: 'For Travelers',
+    links: [
+      'Adventure Clubs',
+      'Offline Navigation',
+      'Travel with Friends',
+    ],
   },
 ];
