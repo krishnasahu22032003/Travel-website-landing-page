@@ -29,8 +29,6 @@
   --color-blue-70: #021639;
   --color-yellow-50: #FEC601;
 
-  --bg-bg-img-1: url('/images/img-1.png');
-  --bg-bg-img-2: url('/images/img-2.png');
   --bg-feature-bg: url('/images/feature-bg.png');
   --bg-pattern: url('/images/pattern.png');
   --bg-pattern-2: url('/images/pattern-bg.png');
@@ -40,7 +38,7 @@
   --screen-4xl: 2200px;
 
   --max-w-10xl: 1512px;
-
+ 
   --radius-5xl: 40px;
 
 }
@@ -235,7 +233,7 @@ background-image: var(--bg-pattern);
 }
 @layer components {
   .hero-map {
-    @apply absolute right-0 top-0 h-screen w-screen bg-pattern-2 bg-cover bg-center md:-right-28 xl:-top-60;
+    @apply absolute right-0 top-0 h-screen w-screen bg-pattern-2 bg-cover bg-center md:-right-40 xl:-top-20;
   }
 
   .camp-quote {

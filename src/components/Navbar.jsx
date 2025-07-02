@@ -3,7 +3,7 @@ import Button from "./Button";
 
 const Navbar = () => {
   return (
-    <nav className="flex items-center justify-between max-w-[1440px] mx-auto px-6 lg:px-12 py-5">
+    <nav className="relative z-50 flex items-center  justify-between max-w-[1440px] mx-auto px-6 lg:px-12 py-5">
       {/* Logo */}
       <a href="/" className="shrink-0">
         <img
@@ -21,7 +21,7 @@ const Navbar = () => {
             <li key={link.key}>
               <a
                 href={link.href}
-                className="text-gray-400 text-[16px] font-normal hover:font-bold transition-all"
+                className="text-black  text-[16px] font-normal hover:font-bold transition-all"
               >
                 {link.label}
               </a>
