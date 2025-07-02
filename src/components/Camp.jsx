@@ -47,7 +47,7 @@ const CampSite = ({ backgroundImage, title, subtitle, peopleJoined }) => {
               {PEOPLE_URL.map((url, index) => (
                 <img
                   key={index}
-                  className="inline-block h-10 w-10 rounded-full will-change-transform"
+                  className="inline-block h-10 w-10 rounded-full will-change-transform transition-transform duration-500"
                   src={url}
                   alt="person"
                   width={52}
@@ -68,10 +68,12 @@ const Camp = () => {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      // Animate each card individually
-      gsap.utils.toArray(".camp-card").forEach((card) => {
-        gsap.set(card, { opacity: 0, y: 60 });
+      const cards = gsap.utils.toArray(".camp-card");
+      const words = gsap.utils.toArray(".camp-title span");
+      const peopleImgs = gsap.utils.toArray(".camp-images img");
 
+      cards.forEach((card) => {
+        gsap.set(card, { opacity: 0, y: 60 });
         gsap.to(card, {
           scrollTrigger: {
             trigger: card,
@@ -85,8 +87,7 @@ const Camp = () => {
         });
       });
 
-      // Animate title words
-      gsap.utils.toArray(".camp-title span").forEach((word) => {
+      words.forEach((word) => {
         gsap.set(word, { opacity: 0, y: 10 });
         gsap.to(word, {
           scrollTrigger: {
@@ -100,10 +101,8 @@ const Camp = () => {
         });
       });
 
-      // Animate people images
-      gsap.utils.toArray(".camp-images img").forEach((img) => {
+      peopleImgs.forEach((img) => {
         gsap.set(img, { opacity: 0, scale: 0.8 });
-
         gsap.to(img, {
           scrollTrigger: {
             trigger: img,
@@ -116,7 +115,28 @@ const Camp = () => {
         });
       });
 
-      ScrollTrigger.refresh();
+      // Wait until images load before refreshing ScrollTrigger
+      const images = sectionRef.current?.querySelectorAll("img");
+      const waitForImages = () =>
+        new Promise((resolve) => {
+          if (!images || images.length === 0) return resolve();
+          let loaded = 0;
+          images.forEach((img) => {
+            if (img.complete) {
+              loaded++;
+              if (loaded === images.length) resolve();
+            } else {
+              img.onload = img.onerror = () => {
+                loaded++;
+                if (loaded === images.length) resolve();
+              };
+            }
+          });
+        });
+
+      waitForImages().then(() => {
+        ScrollTrigger.refresh();
+      });
     }, sectionRef);
 
     return () => ctx.revert();
