@@ -25,11 +25,11 @@
   --color-blue-70: #021639;
   --color-yellow-50: #FEC601;
 
-  --bg-bg-img-1: url('/img-1.png');
-  --bg-bg-img-2: url('/img-2.png');
+  --bg-bg-img-1: url('/images/img-1.png');
+  --bg-bg-img-2: url('/images/img-2.png');
   --bg-feature-bg: url('/images/feature-bg.png');
-  --bg-pattern: url('/pattern.png');
-  --bg-pattern-2: url('/pattern-bg.png');
+  --bg-pattern: url('/images/pattern.png');
+  --bg-pattern-2: url('/images/pattern-bg.png');
 
   --screen-xs: 400px;
   --screen-3xl: 1680px;
@@ -77,15 +77,15 @@
  
 }
 @utility bg-pattern{
-background-image: var(--bg--pattern);
+background-image: var(--bg-pattern);
 }
 @utility bg-pattern-2{
-   background-image: var(--bg--pattern-2); 
+   background-image: var(--bg-pattern-2); 
 }
 @utility max-container {
   margin-left: auto;
   margin-right: auto;
-  max-width: 1440px;
+  max-width: auto;
   }
 @layer utilities {
  

@@ -12,7 +12,7 @@ function App() {
  
 
   return (
-    <>
+    <div className='overflow-x-hidden overflow-y-hidden'>
    <Navbar/>
    <Hero/>
    <Camp/>
@@ -20,7 +20,7 @@ function App() {
    <Features/>
    <GetApp/>
    <Footer/>
-    </>
+    </div>
   )
 }
 
