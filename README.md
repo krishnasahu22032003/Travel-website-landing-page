@@ -1,12 +1,58 @@
-# React + Vite
+# 🌍 Globeora – Modern Animated Travel Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Globeora is a visually stunning and highly interactive travel landing page built with modern web technologies. Designed to captivate users at first glance, this project showcases smooth animations, immersive visuals, and a responsive layout, making it ideal for travel startups, agencies, or personal travel portfolios.
 
-Currently, two official plugins are available:
+![Globeora Preview](./images/travel-website.png) 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## Expanding the ESLint configuration
+- 🎥 Smooth entrance and scroll-triggered animations using **GSAP**
+- 🎨 Clean, minimalistic design with a **futuristic travel theme**
+- 📱 Fully responsive – adapts perfectly to all screen sizes
+- 🌐 Modern stack using **React**, **Tailwind CSS**, and **Framer Motion**
+- 🧭 Interactive sections such as Hero, Campsites, Testimonials, and Explore
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Tech Stack
+
+- **React** – UI components & state management
+- **GSAP + ScrollTrigger** – Advanced animations
+- **Tailwind CSS v4** – Utility-first modern styling with OKLCH color tokens
+- **Framer Motion** – Seamless animations for React components
+- **Vite** – Lightning-fast build tool and dev server
+
+## 📂 Folder Structure
+
+```bash
+Globeora/
+├── public/
+│   └── images/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── sections/
+│   ├── constants/
+│   ├── styles/
+│   └── App.jsx
+├── main.css
+└── README.md
+
+🧪 Setup & Installation
+Clone the repo
+git clone https://github.com/your-username/globeora.git
+cd globeora
+Install dependencies
+
+npm install
+Start development server
+
+npm run dev
+Build for production
+
+npm run build
+
+🧑‍💻 Author
+Made with ❤️ by Krishna Sahu
+Feel free to reach out for collaboration or freelance work.
+email:krishna.sahu.work@gmail.com
+📄 License
+This project is licensed under the MIT License.
