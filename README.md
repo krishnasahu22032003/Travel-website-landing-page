@@ -2,7 +2,7 @@
 
 Globeora is a visually stunning and highly interactive travel landing page built with modern web technologies. Designed to captivate users at first glance, this project showcases smooth animations, immersive visuals, and a responsive layout, making it ideal for travel startups, agencies, or personal travel portfolios.
 
-![Globeora Preview](./images/travel-website.png) 
+![Globeora Preview](/images/travel-website.png) 
 
 ## ✨ Features
 
